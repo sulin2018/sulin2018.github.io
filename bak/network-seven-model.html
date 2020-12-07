@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+	<title>network --- 计算机网络 七层模型 | Jackin</title>
+	 
+	<meta name="description" content="Jackin的个人博客" />
+	  <link rel="alternate" href="/atom.xml" title="Jackin" type="application/atom+xml"> 
+
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<!-- meta -->
+	
+
+	<!-- link -->
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
+	/>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css" />
+	
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css"
+	/>
+	 
+	<link rel="shortcut icon" type="image/x-icon" href="/images/icon-color.png" />
+	  
+<link rel="stylesheet" href="/style.css">
+ 
+
+	<script>
+		function setLoadingBarProgress(num) {
+			document.getElementById('loading-bar').style.width = num + '%';
+		}
+	</script>
+
+	 
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+<body>
+    <div id="loading-bar-wrapper">
+  <div id="loading-bar" class="pure"></div>
+</div>
+
+    <script>setLoadingBarProgress(20)</script>
+    <header class="l_header pure">
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Jackin
+        
+      </a>
+			<div class='menu'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a id="home"
+								 class="nav flat-box" href="/">
+									<i class='fas fa-home fa-fw'></i>&nbsp;主页
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="archives"
+								 class="nav flat-box" href="/archives/">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;文章
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="categoriesOperation"
+								 class="nav flat-box" href="/categories/Operation">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;运维
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="categoriesDevelop"
+								 class="nav flat-box" href="/categories/Develop">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;开发
+								</a>
+							</li>
+      			
+  						<li>
+								<a id="about"
+								 class="nav flat-box" href="/about/">
+									<i class='fas fa-user fa-fw'></i>&nbsp;关于
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<span class="icon"><i class="fas fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+				<li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu">
+      <ul>
+          
+              
+                  <li>
+										<a id="home" class="nav flat-box" href="/">
+											<i class='fas fa-home fa-fw'></i>&nbsp;主页
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="archives" class="nav flat-box" href="/archives/">
+											<i class='fas fa-archive fa-fw'></i>&nbsp;文章
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="categoriesOperation" class="nav flat-box" href="/categories/Operation">
+											<i class='fas fa-archive fa-fw'></i>&nbsp;运维
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="categoriesDevelop" class="nav flat-box" href="/categories/Develop">
+											<i class='fas fa-archive fa-fw'></i>&nbsp;开发
+										</a>
+                  </li>
+              
+                  <li>
+										<a id="about" class="nav flat-box" href="/about/">
+											<i class='fas fa-user fa-fw'></i>&nbsp;关于
+										</a>
+                  </li>
+              
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+
+    <script>setLoadingBarProgress(40);</script>
+    <div class="l_body">
+    <div class='container clearfix'>
+        <div class='l_main'>
+            <article id="page" class="post white-box article-type-page" itemscope itemprop="blogPost">
+  
+<section class='meta'>
+  
+  
+  <div class="meta" id="header-meta">
+    
+      
+          <h1 class="title">network --- 计算机网络 七层模型</h1>
+      
+    
+
+    <div class='new-meta-box'>
+      
+        <div class='new-meta-item author'>
+          <a href="http://sulin2018.github.io">
+            <i class="fas fa-user" aria-hidden="true"></i>
+            Jackin
+          </a>
+        </div>
+      
+      
+        <div class="new-meta-item date">
+          <a class='notlink'>
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            2018-11-29
+          </a>
+        </div>
+      
+      
+        
+          
+          <div class='new-meta-item category'>
+            <a href='/'>
+              <i class="fas fa-folder-open" aria-hidden="true"></i>
+              &nbsp;/&nbsp;
+            </a>
+          </div>
+        
+      
+      
+        
+          <div class="new-meta-item browse busuanzi">
+            <a class='notlink'>
+              <i class="fas fa-eye" aria-hidden="true"></i>
+              <span id="busuanzi_value_page_pv">
+                <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+              </span>
+            </a>
+          </div>
+        
+      
+      
+    </div>
+    <hr>
+  </div>
+</section>
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>本篇主要记录计算机网络相关知识。</p>
+<a id="more"></a>
+<h2 id="七层模型"><a href="#七层模型" class="headerlink" title="七层模型"></a>七层模型</h2><ul>
+<li>应用层：向用户提供具体服务。文件服务、电子邮件：FTP、SMTP、DNS、HTTP</li>
+<li>表示层：处理用户信息的表示问题，如编码、数据格式转换和加密解密；LPP</li>
+<li>会话层：建立、解除接点联系，向两个实体会话层提供建立和使用连接方法；LDAP、SSL、TLS</li>
+<li>传输层：提供可靠端到端的差错和流量控制，保证报文正确传输；TCP、UDP</li>
+<li>网络层：通过路由算法为数据包选择合适路由，解决不同网络通信问题；IP</li>
+<li>数据链路层：建立和管理节点之间的链路；建立传输链路，传输有地址的数据帧：ARP、RARP</li>
+<li>物理层：提供二进制数据物理线路，屏蔽不同介质的物理差异；物理媒体，二进制数据传输：ISO2110、IEEE802</li>
+</ul>
+<p>大图概览（图片来源于网络）</p>
+<fancybox><br><img src="/images/seven_network.gif" alt="七层网络"><br></fancybox>
+
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><p>核心是实现 bit 数据与物理光电信号转换。</p>
+<p>具体功能包括光电信号转换，信号中继放大等。数据的单位称为比特(bit)。</p>
+<p>网卡：计算机连接网络的设备。</p>
+<h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><p>建立相邻结点之间的数据链路。</p>
+<p>数据链路层在不可靠的物理介质上提供可靠的传输。该层的作用包括：物理地址寻址、数据的成帧、流量控制、数据的检错、重发等。数据的单位称为帧(frame)。</p>
+<p>MAC 地址：<br>又称计算机的硬件地址, 被固化在适配器(网卡)ROM 上的占 48 位的地址. MAC 地址可以用来唯一区别一台计算机, 因为它在全球是独一无二的</p>
+<p>分组交换：<br>由于数据在这次曾要被分割成一个一个的帧, 由于不同的链路规定了不同的最大帧长, 即 MTU(最大传输单元), 凡是超出这个 MTU 的帧都必须被分块. 例如一台货车一次能运输 5 吨的货物, 而有条公路限载重 2 吨, 那么你只好分 3 次运输.</p>
+<p>网桥：<br>网桥工作在数据链路层, 根据 MAC 帧的目的地址对收到的帧进行转发和过滤.</p>
+<p>以太网交换机：<br>实际上就是一个多接口的网桥, 以太网交换机的每个接口都直接与一个单个主机或另一个集线器相连, 可以很容易实现 VLAN(虚拟局域网)</p>
+<p>中继器：<br>增强物理信号，延长网络的设备。</p>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><p>连接独立子网；选择合适的网间路由和交换结点， 确保数据及时传送。</p>
+<p>数据的单位称为数据包(packet)。</p>
+<p>通过路由选择算法，为报文或分组通过通信子网选择最适当的路径。数据链路层是解决同一网络内节点之间的通信，而网络层主要解决不同子网间的通信。</p>
+<p>IP 地址分类：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">IP地址 = &#123;&lt;网络号&gt;, &lt;主机号&gt;&#125;</span><br><span class="line">A类地址 : 0.0.0.0 ~ 127.0.0.0</span><br><span class="line">B类地址 : 128.0.0.0 ~ 191.255.0.0</span><br><span class="line">C类地址 : 192.0.0.0 ~ 223.255.255.0</span><br></pre></td></tr></table></figure>
+<p>划分子网之后的 IP 地址：<br><code>IP地址 = &#123;&lt;网络号&gt;, &lt;子网号&gt;, &lt;主机号&gt;&#125;</code></p>
+<p>子网掩码：<br>所有的网络都必须使用子网掩码, 同时在路由表中必须有子网掩码这一栏. 如果一个网络不划分子网, 那么该网络的子网掩码就是默认的子网掩码.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A类地址的默认子网掩码为255.0.0.0</span><br><span class="line">B类地址的默认子网掩码为255.255.0.0</span><br><span class="line">C类地址的默认子网掩码为255.255.255.0</span><br></pre></td></tr></table></figure>
+<p>子网掩码和 IP 地址做按位与运算即可得出网络地址。</p>
+<p>ARP 协议：<br>ARP 地址解析协议是解决同一个局域网上的主机或路由器的 IP 地址和 MAC 地址的映射问题, 即 IP 地址 -&gt; ARP -&gt; MAC 地址。当主机 A 欲向本局域网上的某个主机 B 发送 IP 数据报时，就先在其 ARP 高速缓存中查看有无主机 B 的 IP 地址。如果有可以查出其对应的硬件地址，再将此硬件地址写入 MAC 帧，然后通过局域网将该 MAC 帧发往此硬件地址。</p>
+<p>RARP 是逆地址解析协议，作用是完成硬件地址到 IP 地址的映射.(请求是广播，应答是单播)</p>
+<p>路由器：工作在网络层，是能够连接不同的广域网形成更大的广域网。连接的是异构网络。根据 IP 地址转发。</p>
+<p>交换机：工作在数据链路层，是将以太网连接形成更大的以太网，同一个网络。根据 MAC 地址进行转发。</p>
+<p>DHCP 协议： 动态主机 IP 配置协议，是一种让系统得以连接到网络上，并获取所需要的配置参数手段。</p>
+<p>NAT 协议：网络地址转换属接入广域网(WAN)技术，是一种将私有（保留）地址转化为合法 IP 地址的转换技术。</p>
+<p>域名：为了识别主机和组织名称的分层名称。</p>
+<p>ICMP：确认 IP 包是否送达目标地址，提供未送达原因，改善网络设置。</p>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><p>提供可靠的端到端的差错控制和流量控制，保证报文的正确传输。</p>
+<p>数据单元也称作数据包(packets)。</p>
+<p>TCP 的数据单元称为段 (segments)而 UDP 协议的数据单元称为“数据报(datagrams)。</p>
+<p>TCP 三次握手(图片来源网络)</p>
+<fancybox><br><img src="/images/tcp_3.jpg" alt="三次握手"><br></fancybox>
+
+<p>TCP 四次挥手（图片来源网络)</p>
+<fancybox><br><img src="/images/tcp_4.jpg" alt="四次挥手"><br></fancybox>
+
+<h2 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h2><p>向两个实体的表示层提供建立和使用连接的方法。</p>
+<p>数据传送的单位不再另外命名，而是统称为报文。</p>
+<h2 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h2><p>处理用户信息的表示问题，如编码、数据格式转换和加密解密”。</p>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><p>直接向用户提供服务，完成用户希望在网络上完成的各种工作。</p>
+<p>DNS, Domain Name System：<br>DNS 域名系统 能将域名(例如, <a target="_blank" rel="noopener" href="http://www.google.com)解析成">www.google.com)解析成</a> IP 地址.</p>
+<p>HTTP:</p>
+<ul>
+<li>超文本传输协议</li>
+<li>每一次 HTTP 请求就需要建立一次 TCP 连接和释放 TCP 连接.</li>
+<li>HTTP 是无连接, 无状态的. 每一次请求都是作为一次新请求.</li>
+<li>HTTP/1.0 缺点 : 无连接, 每一次请求都要重新建立 TCP 连接, 所以每一次 HTTP 请求都要花费 2 倍 RTT 时间(一次 TCP 请求, 一次 HTTP 请求)</li>
+<li>HTTP/1.1 : 使用持续连接, 即保持 TCP 连接一段时间.</li>
+</ul>
+
+      </div>
+        
+
+        
+
+    </section>
+
+</article>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments">
+    <section class="article typo">
+      
+      
+        <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
+        
+        
+          <section id="comments">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTI0My8xNzc5MQ==">
+              <noscript>⚠️  无法加载评论系统，请确保您的网络能够正常访问</noscript>
+            </div>
+          </section>
+        
+        
+      
+    </section>
+  </article>
+
+
+
+<script>
+    window.subData = {
+        title: 'network --- 计算机网络 七层模型',
+        tools: true
+    }
+</script>
+
+        </div>
+        <aside class='l_side'>
+            
+  
+  
+    
+      
+      
+        
+
+      
+    
+  
+    
+      
+      
+        
+  <section class='tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/hexo/" style="font-size: 14px; color: #999">hexo</a>
+    </div>
+  </section>
+
+
+      
+    
+  
+    
+      
+      
+        
+
+      
+    
+  
+
+
+        </aside>
+        <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+    </div>
+    <footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="https://sulin2018.github.io" class="social fas fa-envelope flat-btn" target="_blank" rel="external"></a>
+        
+      
+        
+          <a href="https://github.com/sulin2018" class="social fab fa-github flat-btn" target="_blank" rel="external"></a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>博客内容遵循 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>本站使用 <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a> 作为主题，总访问量为 <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span> 次。
+  </div>
+</footer>
+
+    <script>setLoadingBarProgress(80);</script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+<script>
+	var GOOGLE_CUSTOM_SEARCH_API_KEY = '';
+	var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = '';
+	var ALGOLIA_API_KEY = '';
+	var ALGOLIA_APP_ID = '';
+	var ALGOLIA_INDEX_NAME = '';
+	var AZURE_SERVICE_NAME = '';
+	var AZURE_INDEX_NAME = '';
+	var AZURE_QUERY_KEY = '';
+	var BAIDU_API_ID = '';
+	var SEARCH_SERVICE = 'hexo' || 'hexo';
+	var ROOT = '/' || '/';
+	if (!ROOT.endsWith('/')) ROOT += '/';
+</script>
+  
+<script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		const $reveal = $('.reveal');
+		if ($reveal.length === 0) return;
+		const sr = ScrollReveal({ distance: 0 });
+		sr.reveal('.reveal');
+	});
+</script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		Waves.attach('.flat-btn', ['waves-button']);
+		Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+		Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+		Waves.attach('.flat-box', ['waves-block']);
+		Waves.attach('.float-box', ['waves-block', 'waves-float']);
+		Waves.attach('.waves-image');
+		Waves.init();
+	});
+</script>
+ 
+<script
+	async
+	src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"
+></script>
+       
+<script type="text/javascript">
+	(function(d, s) {
+		var j,
+			e = d.getElementsByTagName(s)[0];
+		if (typeof LivereTower === 'function') {
+			return;
+		}
+		j = d.createElement(s);
+		j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		j.async = true;
+		e.parentNode.insertBefore(j, e);
+	})(document, 'script');
+</script>
+     
+<script src="/js/app.js"></script>
+<script src="/js/search.js"></script>
+    
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+	let COPY_SUCCESS = "复制成功";
+	let COPY_FAILURE = "复制失败";
+	/*页面载入完成后，创建复制按钮*/
+	!function (e, t, a) {
+	  /* code */
+	  var initCopyCode = function(){
+	    var copyHtml = '';
+	    copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+	    copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+	    copyHtml += '</button>';
+	    $(".highlight .code pre").before(copyHtml);
+	    var clipboard = new ClipboardJS('.btn-copy', {
+	      target: function(trigger) {
+	        return trigger.nextElementSibling;
+	      }
+	    });
+
+	    clipboard.on('success', function(e) {
+	      //您可以加入成功提示
+	      // console.info('Action:', e.action);
+	      // console.info('Text:', e.text);
+	      // console.info('Trigger:', e.trigger);
+	      success_prompt(COPY_SUCCESS);
+	      e.clearSelection();
+	    });
+	    clipboard.on('error', function(e) {
+	      //您可以加入失败提示
+	      // console.error('Action:', e.action);
+	      // console.error('Trigger:', e.trigger);
+	      fail_prompt(COPY_FAILURE);
+	    });
+	  }
+	  initCopyCode();
+
+	}(window, document);
+
+	/**
+	 * 弹出式提示框，默认1.5秒自动消失
+	 * @param message 提示信息
+	 * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+	 * @param time 消失时间
+	 */
+	var prompt = function (message, style, time)
+	{
+	    style = (style === undefined) ? 'alert-success' : style;
+	    time = (time === undefined) ? 1500 : time*1000;
+	    $('<div>')
+	        .appendTo('body')
+	        .addClass('alert ' + style)
+	        .html(message)
+	        .show()
+	        .delay(time)
+	        .fadeOut();
+	};
+
+	// 成功提示
+	var success_prompt = function(message, time)
+	{
+	    prompt(message, 'alert-success', time);
+	};
+
+	// 失败提示
+	var fail_prompt = function(message, time)
+	{
+	    prompt(message, 'alert-danger', time);
+	};
+
+	// 提醒
+	var warning_prompt = function(message, time)
+	{
+	    prompt(message, 'alert-warning', time);
+	};
+
+	// 信息提示
+	var info_prompt = function(message, time)
+	{
+	    prompt(message, 'alert-info', time);
+	};
+</script>
+
+
+<!-- fancybox 图片懒加载 -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+    <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

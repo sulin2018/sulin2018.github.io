@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jackin</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://sulin2018.github.io/"/>
+  <updated>2020-12-07T04:07:47.198Z</updated>
+  <id>http://sulin2018.github.io/</id>
+  
+  <author>
+    <name>Jackin</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo --- 教程 问题</title>
+    <link href="http://sulin2018.github.io/2020/01/20/hexo/"/>
+    <id>http://sulin2018.github.io/2020/01/20/hexo/</id>
+    <published>2020-01-20T10:38:46.000Z</published>
+    <updated>2020-12-07T04:07:47.198Z</updated>
+    
+    <content type="html"><![CDATA[<p>博客基于hexo搭建, 这里记录使用方法, 以及使用过程中遇到的一些问题.</p><a id="more"></a><h2 id="Hexo-部署到-Github-文件夹名大小引起-404-问题"><a href="#Hexo-部署到-Github-文件夹名大小引起-404-问题" class="headerlink" title="Hexo 部署到 Github 文件夹名大小引起 404 问题"></a>Hexo 部署到 Github 文件夹名大小引起 404 问题</h2><p>原因: 由于 git 命令默认的配置中忽略了文件名的大小写，因此即便文件夹的大小写发生了变更，git 也会表现出置之不理。</p><p>解决办法: 修改配置, 使 git 不要忽略大小写.</p><p>步骤:</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line"><span class="built_in">cd</span> .deploy_git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改配置</span></span><br><span class="line">vim .git/config <span class="comment"># 修改ignorecase true为false</span></span><br><span class="line"></span><br><span class="line">[core]</span><br><span class="line">repositoryformatversion = 0</span><br><span class="line">filemode = <span class="literal">true</span></span><br><span class="line">bare = <span class="literal">false</span></span><br><span class="line">logallrefupdates = <span class="literal">true</span></span><br><span class="line">ignorecase = <span class="literal">true</span>   <span class="comment"># 修改true为false</span></span><br><span class="line">precomposeunicode = <span class="literal">true</span></span><br><span class="line">…</span><br><span class="line"></span><br><span class="line"><span class="comment"># 清除GitHub文件</span></span><br><span class="line">git rm -rf *</span><br><span class="line">git commit -m ‘clean all file’</span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新部署</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;博客基于hexo搭建, 这里记录使用方法, 以及使用过程中遇到的一些问题.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://sulin2018.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
