@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="[&quot;zh-CN&quot;,&quot;default&quot;]"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="network --- 计算机网络 七层模型"><meta name="keywords"><meta name="author" content="Sulin,undefined"><meta name="copyright" content="Sulin"><title>network --- 计算机网络 七层模型【Sulin】</title><link rel="stylesheet" href="/css/fan.css"><link rel="stylesheet" href="/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/images/icon-color.png"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"local_search.hits_empty"}},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  gitment: ,
+  valine: ,
+}</script><meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Sulin" type="application/atom+xml">
+</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="author-info"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/images/icon-color.png"></div><div class="author-info-name">Sulin</div><div class="author-info-description">Sulin的个人博客</div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/sulin2018" target="_blank">GitHub<i class="icon-dot bg-color1"></i></a><a class="links-button button-hover" href="mailto:787629224@qq.com" target="_blank">E-Mail<i class="icon-dot bg-color6"></i></a><a class="links-button button-hover" href="tencent://message/?uin=787629224&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color5"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/archives"><span class="pull-top">日志</span><span class="pull-bottom">2</span></a><a class="author-info-articles-tags article-meta" href="/tags"><span class="pull-top">标签</span><span class="pull-bottom">2</span></a><a class="author-info-articles-categories article-meta" href="/categories"><span class="pull-top">分类</span><span class="pull-bottom">2</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="title-name" href="/">Sulin</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="page"><article class="page"><h1>menu.network --- 计算机网络 七层模型</h1><div class="about"><p>本篇主要记录计算机网络相关知识。</p>
+<span id="more"></span>
+
+<h2 id="七层模型"><a href="#七层模型" class="headerlink" title="七层模型"></a>七层模型</h2><ul>
+<li>应用层：向用户提供具体服务。文件服务、电子邮件：FTP、SMTP、DNS、HTTP</li>
+<li>表示层：处理用户信息的表示问题，如编码、数据格式转换和加密解密；LPP</li>
+<li>会话层：建立、解除接点联系，向两个实体会话层提供建立和使用连接方法；LDAP、SSL、TLS</li>
+<li>传输层：提供可靠端到端的差错和流量控制，保证报文正确传输；TCP、UDP</li>
+<li>网络层：通过路由算法为数据包选择合适路由，解决不同网络通信问题；IP</li>
+<li>数据链路层：建立和管理节点之间的链路；建立传输链路，传输有地址的数据帧：ARP、RARP</li>
+<li>物理层：提供二进制数据物理线路，屏蔽不同介质的物理差异；物理媒体，二进制数据传输：ISO2110、IEEE802</li>
+</ul>
+<p>大图概览（图片来源于网络）<br><fancybox><br><img src="/images/seven_network.gif" alt="七层网络"><br></fancybox></p>
+<h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><p>核心是实现 bit 数据与物理光电信号转换。</p>
+<p>具体功能包括光电信号转换，信号中继放大等。数据的单位称为比特(bit)。</p>
+<p>网卡：计算机连接网络的设备。</p>
+<h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><p>建立相邻结点之间的数据链路。</p>
+<p>数据链路层在不可靠的物理介质上提供可靠的传输。该层的作用包括：物理地址寻址、数据的成帧、流量控制、数据的检错、重发等。数据的单位称为帧(frame)。</p>
+<p>MAC 地址：<br>又称计算机的硬件地址, 被固化在适配器(网卡)ROM 上的占 48 位的地址. MAC 地址可以用来唯一区别一台计算机, 因为它在全球是独一无二的</p>
+<p>分组交换：<br>由于数据在这次曾要被分割成一个一个的帧, 由于不同的链路规定了不同的最大帧长, 即 MTU(最大传输单元), 凡是超出这个 MTU 的帧都必须被分块. 例如一台货车一次能运输 5 吨的货物, 而有条公路限载重 2 吨, 那么你只好分 3 次运输.</p>
+<p>网桥：<br>网桥工作在数据链路层, 根据 MAC 帧的目的地址对收到的帧进行转发和过滤.</p>
+<p>以太网交换机：<br>实际上就是一个多接口的网桥, 以太网交换机的每个接口都直接与一个单个主机或另一个集线器相连, 可以很容易实现 VLAN(虚拟局域网)</p>
+<p>中继器：<br>增强物理信号，延长网络的设备。</p>
+<h2 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h2><p>连接独立子网；选择合适的网间路由和交换结点， 确保数据及时传送。</p>
+<p>数据的单位称为数据包(packet)。</p>
+<p>通过路由选择算法，为报文或分组通过通信子网选择最适当的路径。数据链路层是解决同一网络内节点之间的通信，而网络层主要解决不同子网间的通信。</p>
+<p>IP 地址分类：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">IP地址 = &#123;&lt;网络号&gt;, &lt;主机号&gt;&#125;</span><br><span class="line">A类地址 : 0.0.0.0 ~ 127.0.0.0</span><br><span class="line">B类地址 : 128.0.0.0 ~ 191.255.0.0</span><br><span class="line">C类地址 : 192.0.0.0 ~ 223.255.255.0</span><br></pre></td></tr></table></figure>
+
+<p>划分子网之后的 IP 地址：<br><code>IP地址 = &#123;&lt;网络号&gt;, &lt;子网号&gt;, &lt;主机号&gt;&#125;</code></p>
+<p>子网掩码：<br>所有的网络都必须使用子网掩码, 同时在路由表中必须有子网掩码这一栏. 如果一个网络不划分子网, 那么该网络的子网掩码就是默认的子网掩码.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A类地址的默认子网掩码为255.0.0.0</span><br><span class="line">B类地址的默认子网掩码为255.255.0.0</span><br><span class="line">C类地址的默认子网掩码为255.255.255.0</span><br></pre></td></tr></table></figure>
+
+<p>子网掩码和 IP 地址做按位与运算即可得出网络地址。</p>
+<p>ARP 协议：<br>ARP 地址解析协议是解决同一个局域网上的主机或路由器的 IP 地址和 MAC 地址的映射问题, 即 IP 地址 -&gt; ARP -&gt; MAC 地址。当主机 A 欲向本局域网上的某个主机 B 发送 IP 数据报时，就先在其 ARP 高速缓存中查看有无主机 B 的 IP 地址。如果有可以查出其对应的硬件地址，再将此硬件地址写入 MAC 帧，然后通过局域网将该 MAC 帧发往此硬件地址。</p>
+<p>RARP 是逆地址解析协议，作用是完成硬件地址到 IP 地址的映射.(请求是广播，应答是单播)</p>
+<p>路由器：工作在网络层，是能够连接不同的广域网形成更大的广域网。连接的是异构网络。根据 IP 地址转发。</p>
+<p>交换机：工作在数据链路层，是将以太网连接形成更大的以太网，同一个网络。根据 MAC 地址进行转发。</p>
+<p>DHCP 协议： 动态主机 IP 配置协议，是一种让系统得以连接到网络上，并获取所需要的配置参数手段。</p>
+<p>NAT 协议：网络地址转换属接入广域网(WAN)技术，是一种将私有（保留）地址转化为合法 IP 地址的转换技术。</p>
+<p>域名：为了识别主机和组织名称的分层名称。</p>
+<p>ICMP：确认 IP 包是否送达目标地址，提供未送达原因，改善网络设置。</p>
+<h2 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h2><p>提供可靠的端到端的差错控制和流量控制，保证报文的正确传输。</p>
+<p>数据单元也称作数据包(packets)。</p>
+<p>TCP 的数据单元称为段 (segments)而 UDP 协议的数据单元称为“数据报(datagrams)。</p>
+<p>TCP 三次握手(图片来源网络)<br><fancybox><br><img src="/images/tcp_3.jpg" alt="三次握手"><br></fancybox></p>
+<p>TCP 四次挥手（图片来源网络)<br><fancybox><br><img src="/images/tcp_4.jpg" alt="四次挥手"><br></fancybox></p>
+<h2 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h2><p>向两个实体的表示层提供建立和使用连接的方法。</p>
+<p>数据传送的单位不再另外命名，而是统称为报文。</p>
+<h2 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h2><p>处理用户信息的表示问题，如编码、数据格式转换和加密解密”。</p>
+<h2 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h2><p>直接向用户提供服务，完成用户希望在网络上完成的各种工作。</p>
+<p>DNS, Domain Name System：<br>DNS 域名系统 能将域名(例如, <a target="_blank" rel="noopener" href="http://www.google.com)解析成/">www.google.com)解析成</a> IP 地址.</p>
+<p>HTTP:</p>
+<ul>
+<li>超文本传输协议</li>
+<li>每一次 HTTP 请求就需要建立一次 TCP 连接和释放 TCP 连接.</li>
+<li>HTTP 是无连接, 无状态的. 每一次请求都是作为一次新请求.</li>
+<li>HTTP/1.0 缺点 : 无连接, 每一次请求都要重新建立 TCP 连接, 所以每一次 HTTP 请求都要花费 2 倍 RTT 时间(一次 TCP 请求, 一次 HTTP 请求)</li>
+<li>HTTP/1.1 : 使用持续连接, 即保持 TCP 连接一段时间.</li>
+</ul>
+</div></article><div id="pagination"><div class="pagination"></div></div><!--div!= paginator()--></article></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i></span><span id="busuanzi_value_site_uv"></span><span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i></span><span id="busuanzi_value_site_pv"></span><span></span></div><div class="copyright">&copy;2017 ～ 2021 By Sulin</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/js/copy.js"></script><!--script(src=url)--></body></html>
