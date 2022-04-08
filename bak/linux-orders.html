@@ -22,28 +22,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"sulin2018.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.8.2","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="本篇主要记录Python的一些常用包和代码.">
+<meta name="description" content="记录Linux常用命令.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Python --- excel 读写">
-<meta property="og:url" content="http://sulin2018.github.io/bak/python-excel.html">
+<meta property="og:title" content="Linux --- 常用命令">
+<meta property="og:url" content="http://sulin2018.github.io/bak/linux-orders.html">
 <meta property="og:site_name" content="Sulin">
-<meta property="og:description" content="本篇主要记录Python的一些常用包和代码.">
+<meta property="og:description" content="记录Linux常用命令.">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2018-11-24T09:27:30.000Z">
-<meta property="article:modified_time" content="2021-12-31T06:13:34.510Z">
+<meta property="article:published_time" content="2019-04-30T02:33:10.000Z">
+<meta property="article:modified_time" content="2021-12-31T08:54:29.170Z">
 <meta property="article:author" content="Sulin">
-<meta property="article:tag" content="python">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://sulin2018.github.io/bak/python-excel">
+<link rel="canonical" href="http://sulin2018.github.io/bak/linux-orders">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://sulin2018.github.io/bak/python-excel.html","path":"bak/python-excel.html","title":"Python --- excel 读写"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"http://sulin2018.github.io/bak/linux-orders.html","path":"bak/linux-orders.html","title":"Linux --- 常用命令"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Python --- excel 读写 | Sulin
+<title>Linux --- 常用命令 | Sulin
 </title>
   
 
@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSV"><span class="nav-number">1.</span> <span class="nav-text">CSV</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BB%E5%86%99-Excel"><span class="nav-number">2.</span> <span class="nav-text">读写 Excel</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85-%E8%BD%AF%E4%BB%B6-%E7%AE%A1%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">包(软件)管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3"><span class="nav-number">2.</span> <span class="nav-text">网络相关</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -216,7 +216,7 @@
     
     <div class="post-block" lang="zh-CN"><header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">Python --- excel 读写
+<h1 class="post-title" itemprop="name headline">Linux --- 常用命令
 </h1>
 
 <div class="post-meta-container">
@@ -227,21 +227,19 @@
       
       
       <div class="post-body">
-          <p>本篇主要记录<code>Python</code>的一些常用包和代码.</p>
+          <p>记录<code>Linux</code>常用命令.</p>
 <span id="more"></span>
 
-<h2 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a>CSV</h2><p>读</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;read_test.csv&#x27;</span>)<span class="keyword">as</span> f:</span><br><span class="line">    f_csv = csv.reader(f)</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> f_csv:</span><br><span class="line">        <span class="built_in">print</span>(row)</span><br></pre></td></tr></table></figure>
+<h2 id="包-软件-管理"><a href="#包-软件-管理" class="headerlink" title="包(软件)管理"></a>包(软件)管理</h2><p>yum</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">yum search x</span><br><span class="line">yum info x</span><br><span class="line">yum list x</span><br><span class="line">yum install x</span><br><span class="line">yum update x</span><br><span class="line">yum remove x</span><br><span class="line"><span class="comment"># 清除缓存</span></span><br><span class="line">yum clean x</span><br></pre></td></tr></table></figure>
 
-<p>写</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;write_test.csv&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)<span class="keyword">as</span> f:</span><br><span class="line">    headers = [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>]</span><br><span class="line">    datas = [<span class="string">&#x27;jack&#x27;</span>, <span class="number">20</span>]</span><br><span class="line">    f_csv = csv.writer(f)</span><br><span class="line">    f_csv.writerow(headers)</span><br><span class="line">    f_csv.writerows(datas)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># dict 写入</span></span><br><span class="line">    <span class="comment"># rows = [&#123;&#x27;name&#x27;: &#x27;jack&#x27;, &#x27;age&#x27;: 20&#125;]</span></span><br><span class="line">    <span class="comment"># f_csv = csv.DictWriter(f,headers)</span></span><br><span class="line">    <span class="comment"># f_csv.writeheader()</span></span><br><span class="line">    <span class="comment"># f_csv.writerows(rows)</span></span><br></pre></td></tr></table></figure>
+<p>rpm</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看程序相关配置</span></span><br><span class="line">rpm -qc x</span><br><span class="line"><span class="comment"># 程序相关文件</span></span><br><span class="line">rpm -ql x</span><br><span class="line"><span class="comment"># 已安装包</span></span><br><span class="line">rpm -qa</span><br><span class="line"><span class="comment"># 详细信息</span></span><br><span class="line">rpm -qi x</span><br><span class="line"><span class="comment"># 查询文件来源于那个包</span></span><br><span class="line">rpm -qf x</span><br><span class="line"><span class="comment"># 安装</span></span><br><span class="line">rpm -ivh x.rpm</span><br><span class="line"><span class="comment"># 升级</span></span><br><span class="line">rpm -Uvh x.rpm</span><br><span class="line"><span class="comment"># 卸载</span></span><br><span class="line">rpm -e –force x</span><br></pre></td></tr></table></figure>
 
-<h2 id="读写-Excel"><a href="#读写-Excel" class="headerlink" title="读写 Excel"></a>读写 Excel</h2><p><code>xlwt/xlrd</code>如何读写<code>Excel</code>表格文件。</p>
-<p>写入</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">write_test</span>():</span></span><br><span class="line">    <span class="comment"># 1 先创建个工作簿</span></span><br><span class="line">    wbook = xlwt.Workbook(encoding=<span class="string">&quot;utf-8&quot;</span>, style_compression=<span class="number">0</span>)</span><br><span class="line">    <span class="comment"># 2 添加个表</span></span><br><span class="line">    wsheet = wbook.add_sheet(sheetname=<span class="string">&quot;one&quot;</span>)</span><br><span class="line">    <span class="comment"># 3 写入，参数说明：行，列，值</span></span><br><span class="line">    wsheet.write(<span class="number">0</span>, <span class="number">0</span>, <span class="string">&#x27;姓名&#x27;</span>)</span><br><span class="line">    wsheet.write(<span class="number">0</span>, <span class="number">1</span>, <span class="string">&#x27;年龄&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    wsheet.write(<span class="number">1</span>, <span class="number">0</span>, <span class="string">&#x27;张三&#x27;</span>)</span><br><span class="line">    wsheet.write(<span class="number">1</span>, <span class="number">1</span>, <span class="string">&#x27;33&#x27;</span>)</span><br><span class="line">    <span class="comment"># 保存</span></span><br><span class="line">    wbook.save(<span class="string">&#x27;test.xls&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="网络相关"><a href="#网络相关" class="headerlink" title="网络相关"></a>网络相关</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br><span class="line">ifconfig eth0 up/down</span><br><span class="line">ifconfig eth0 hw ether 00:AA:BB:CC:DD:EE  <span class="comment"># 修改MAC地址</span></span><br><span class="line">ifconfig eth0 192.168.120.56 netmask 255.255.255.0 broadcast 192.168.120.255 <span class="comment"># 配置IP/子网掩码/广播地址</span></span><br><span class="line"></span><br><span class="line">route -n</span><br><span class="line">route add/del default gw 192.168.1.1 eth0 <span class="comment"># 添加默认路由网关</span></span><br><span class="line">route add/del -host 192.168.1.3 gw 192.168.1.1 dev eth0 <span class="comment"># 目标主机</span></span><br><span class="line">route add/del -net 192.168.1.0 netmask 255.255.255.0 dev eth0 <span class="comment"># 目标网络</span></span><br><span class="line">route add -net 10.0.0.0 netmask 255.0.0.0 reject <span class="comment"># 网络不可达</span></span><br><span class="line"></span><br><span class="line">netstat -tnlp <span class="comment"># tcp IP展示 listening PID</span></span><br><span class="line"></span><br><span class="line">ss -tnlp</span><br><span class="line">ss -tnp state <span class="string">&#x27;established&#x27;</span></span><br></pre></td></tr></table></figure>
 
-<p>读取</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_test</span>():</span></span><br><span class="line">    <span class="comment"># 1 打开excel文件</span></span><br><span class="line">    data = xlrd.open_workbook(<span class="string">&#x27;test.xls&#x27;</span>)</span><br><span class="line">    <span class="comment"># 2 获取第一张工作表（通过索引的方式）</span></span><br><span class="line">    table = data.sheets()[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 3 遍历打印数据</span></span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> <span class="built_in">range</span>(table.nrows):</span><br><span class="line">        <span class="built_in">print</span>(table.row_values(row))</span><br></pre></td></tr></table></figure>
+<p>ip 命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ip a/addr show</span><br><span class="line">ip a/addr/address add/del 192.168.78.130/24 dev eth1 <span class="comment"># 添加IP</span></span><br><span class="line">ip a flush dev eth1</span><br><span class="line"></span><br><span class="line">ip link sh/show/l/ls/lsit eth1</span><br><span class="line">ip link <span class="built_in">set</span> dev eth1 down/up</span><br><span class="line"></span><br><span class="line">ip r/ro/route sh/show</span><br><span class="line">ip r/ro/route add/del 192.168.79.0/24 dev eth1</span><br><span class="line">ip r/ro/route add/del/chg/change default via 192.168.78.1</span><br></pre></td></tr></table></figure>
 
       </div>
       

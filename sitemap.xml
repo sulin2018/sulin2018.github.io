@@ -4,7 +4,16 @@
   <url>
     <loc>http://sulin2018.github.io/2020/01/20/hexo/</loc>
     
-    <lastmod>2021-12-31</lastmod>
+    <lastmod>2022-01-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://sulin2018.github.io/about/index.html</loc>
+    
+    <lastmod>2022-01-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -29,16 +38,7 @@
   </url>
   
   <url>
-    <loc>http://sulin2018.github.io/about/index.html</loc>
-    
-    <lastmod>2021-12-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://sulin2018.github.io/2019/04/30/linux-orders/</loc>
+    <loc>http://sulin2018.github.io/bak/linux-orders.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>http://sulin2018.github.io/bak/network-seven-model.html</loc>
+    <loc>http://sulin2018.github.io/bak/python-excel.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>http://sulin2018.github.io/bak/python-excel.html</loc>
+    <loc>http://sulin2018.github.io/bak/network-seven-model.html</loc>
     
     <lastmod>2021-12-31</lastmod>
     
@@ -121,7 +121,7 @@
 
   <url>
     <loc>http://sulin2018.github.io/</loc>
-    <lastmod>2021-12-31</lastmod>
+    <lastmod>2022-04-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -129,32 +129,11 @@
   
   <url>
     <loc>http://sulin2018.github.io/tags/hexo/</loc>
-    <lastmod>2021-12-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://sulin2018.github.io/tags/Linux/</loc>
-    <lastmod>2021-12-31</lastmod>
+    <lastmod>2022-04-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
 
-  
-  <url>
-    <loc>http://sulin2018.github.io/categories/Operation/</loc>
-    <lastmod>2021-12-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://sulin2018.github.io/categories/Operation/Linux/</loc>
-    <lastmod>2021-12-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
 </urlset>
